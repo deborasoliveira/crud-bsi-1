@@ -35,11 +35,11 @@ def cadastro_prof():
                 for i in range(len(professor)):
                     if cpf_professor in professor[i][1]:
                         print("Professor já cadastrado. ")
-                    else:
-                        professor.append([nome_professor, cpf_professor, dpt_professor])
-                        print("Cadastro realizado com sucesso: {}, {}, {}".format(nome_professor, cpf_professor, dpt_professor))
-                        salvar_cadastro()
-                        break
+                else:
+                    professor.append([nome_professor, cpf_professor, dpt_professor])
+                    print("Cadastro realizado com sucesso: {}, {}, {}".format(nome_professor, cpf_professor, dpt_professor))
+                    salvar_cadastrop()
+                    break
             elif op == 2:
                 break
             else:
@@ -60,7 +60,7 @@ def remover_cadastro():
                     if del_professor in professor[i][1]:
                         professor.remove(professor[i])  # ENFEITAR MAIS ESSA PARTE, ADD + OUTRA OP!!!!!!!!!!!!!!!!
                         print("Professor removido com sucesso.")
-                        salvar_cadastro()
+                        salvar_cadastrop()
                 else:
                     print("Cadastro não encontrado.")
                     break
@@ -109,19 +109,19 @@ def atualizar_prof():
                             professor[i][0] = nome
                             print("NOME: {}\nPROFESSOR: {}\nDEPARTAMENTO: {}".format(professor[i][0], professor[i][1], professor[i][2]))  # ENFEITAR + ESSA PARTE!!!!!!!!!!!!!!!!!!!!!!!!!!!!
                             print("Cadastro alterado com sucesso.")
-                            salvar_cadastro()
+                            salvar_cadastrop()
                         elif opc == 2:
                             cpf = input("Digite seu cpf: ")
                             professor[i][1] = cpf
                             print("NOME: {}\n CPF: {}\n DEPARTAMENTO: {}".format(professor[i][0], professor[i][1], professor[i][2]))  # ENFEITAR ESSA PARTE!!!!!!!!!!!!!!!!!!!!!!!
                             print("Cadastro alterado com sucesso.")
-                            salvar_cadastro()
+                            salvar_cadastrop()
                         elif opc == 3:
                             dpt = input("Digite seu departamento aqui: ")
                             professor[i][2] = dpt
                             print("NOME: {}\nCPF: {}\n DEPARTAMENTO: {}".format(professor[i][0], professor[i][1], professor[i][2]))
                             print("Cadastro alterado com sucesso")
-                            salvar_cadastro()
+                            salvar_cadastrop()
                             break
                     else:
                         print("Cadastro não encontrado.")
@@ -132,3 +132,4 @@ def atualizar_prof():
         except EOFError:
             break
 atualizar_prof()
+
