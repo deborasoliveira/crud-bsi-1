@@ -1,0 +1,134 @@
+professor = []
+
+#PARA SALVAR CADASTRO, ATUALIZAÇÃO E REMOÇÃO
+def salvar_cadastrop():
+    global professor
+    arq = open('professor.txt', 'w', encoding = "utf-8")
+    for i in professor:
+        nome_professor = str(i[0])
+        cpf_professor = str(i[1])
+        dpt_professor = str(i[2])
+        arq.write('%s %s %s\n' %(nome_professor, cpf_professor, dpt_professor))
+    arq.close()
+
+#PARA CONSULTAR NO ARQUIVO
+def consulta_arquivo():
+    global professor
+    arq = open("professor.txt", "r", encoding="utf-8")
+    for i in professor:
+        nome_professor = str(i[0])
+        cpf_professor = str(i[1])
+        dpt_professor = str(i[2])
+        arq.readline()
+        print("NOME: {}, CPF: {}, DEPARTAMENTO: {}".format(nome_professor, cpf_professor, dpt_professor))
+    arq.close()
+
+#CADASTRO
+def cadastro_prof():
+    while True:
+        try:
+            op = int(input("Para cadastro digite 1, para retornar ao menu principal digite 2: "))
+            if op == 1:
+                nome_professor = input("Digite seu nome para cadastro aqui: ")
+                cpf_professor = input("Digite seu cpf para cadastro aqui: ")
+                dpt_professor = input("Digite seu departamento para cadastro aqui: ")
+                for i in range(len(professor)):
+                    if cpf_professor in professor[i][1]:
+                        print("Professor já cadastrado. ")
+                    else:
+                        professor.append([nome_professor, cpf_professor, dpt_professor])
+                        print("Cadastro realizado com sucesso: {}, {}, {}".format(nome_professor, cpf_professor, dpt_professor))
+                        salvar_cadastro()
+                        break
+            elif op == 2:
+                break
+            else:
+                print("Opção inválida.")
+        except EOFError:
+            break
+cadastro_prof()
+
+
+#REMOVER CADASTRO
+def remover_cadastro():
+    while True:
+        try:
+            op = int(input("Para remover o cadastro digite 1, para retornar ao menu principal digite 2: "))
+            if op == 1:
+                del_professor = input("Para a remoção de cadastro, digite seu cpf aqui: ")
+                for i in range(len(professor)):
+                    if del_professor in professor[i][1]:
+                        professor.remove(professor[i])  # ENFEITAR MAIS ESSA PARTE, ADD + OUTRA OP!!!!!!!!!!!!!!!!
+                        print("Professor removido com sucesso.")
+                        salvar_cadastro()
+                else:
+                    print("Cadastro não encontrado.")
+                    break
+            elif op == 2:
+                break
+            else:
+                print("Operação inválida.")
+        except EOFError:
+            break
+remover_cadastro()
+
+
+#CONSULTAR CADASTRO
+def consultar_cadastro():
+    while True:
+        try:
+            op = int(input("Para consultar cadastro digite 1, para retornar ao menu principal digite 2: "))
+            if op == 1:
+                consulta_prof = input("Para consulta, digite seu cpf aqui: ")
+                for i in range(len(professor)):
+                    if professor[i][1] == consulta_prof:
+                        print("NOME: {}\nCPF: {}\nDEPARTAMENTO: {}".format(professor[i][0], professor[i][1], professor[i][2]))
+                    else:
+                        print("Cadastro não encontrado.")
+            elif op == 2:
+                break
+            else:
+                print("Operação inválida.")
+        except EOFError:
+            break
+consultar_cadastro()
+
+
+#ATUALIZAR CADASTRO
+def atualizar_prof():
+    while True:
+        try:
+            op = int(input("Para atualizar cadastro digite 1, para retornar ao menu principal digite 2: "))
+            if op == 1:
+                alt_professor = input("Digite seu CPF para ter acesso à atualização: ")
+                for i in range(len(professor)):
+                    if alt_professor in professor[i][1]:
+                        opc = int(input("Para atualizar o nome digite 1, para atualizar o cpf digite 2, e 3 para departamento: "))
+                        if opc == 1:
+                            nome = input("Digite seu nome aqui: ")
+                            professor[i][0] = nome
+                            print("NOME: {}\nPROFESSOR: {}\nDEPARTAMENTO: {}".format(professor[i][0], professor[i][1], professor[i][2]))  # ENFEITAR + ESSA PARTE!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+                            print("Cadastro alterado com sucesso.")
+                            salvar_cadastro()
+                        elif opc == 2:
+                            cpf = input("Digite seu cpf: ")
+                            professor[i][1] = cpf
+                            print("NOME: {}\n CPF: {}\n DEPARTAMENTO: {}".format(professor[i][0], professor[i][1], professor[i][2]))  # ENFEITAR ESSA PARTE!!!!!!!!!!!!!!!!!!!!!!!
+                            print("Cadastro alterado com sucesso.")
+                            salvar_cadastro()
+                        elif opc == 3:
+                            dpt = input("Digite seu departamento aqui: ")
+                            professor[i][2] = dpt
+                            print("NOME: {}\nCPF: {}\n DEPARTAMENTO: {}".format(professor[i][0], professor[i][1], professor[i][2]))
+                            print("Cadastro alterado com sucesso")
+                            salvar_cadastro()
+                            break
+                    else:
+                        print("Cadastro não encontrado.")
+            elif op == 2:
+                break
+            else:
+                print("Operação inválida.")
+        except EOFError:
+            break
+atualizar_prof()
