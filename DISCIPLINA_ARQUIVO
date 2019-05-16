@@ -10,17 +10,6 @@ def salvar_cadastrod():
         arq.close()
 salvar_cadastrod()
 
-#PARA CONSULTAR NO ARQUIVO
-def consulta_arquivo():
-    global disciplina
-    arq = open("disciplinas.txt", "r", encoding="utf-8")
-    for i in disciplina:
-        nome_disciplina = str(i[0])
-        cod_disciplina = str(i[1])
-        arq.readline()
-        print("NOME DA DISCIPLINA: {}\nCÓDIGO DA DISCIPLINA: {}".format(nome_disciplina, cod_disciplina))
-    arq.close()
-consulta_arquivo()
 
 #PARA O CADASTRO DE DISCIPLINA
 def cadastro_disciplina():
