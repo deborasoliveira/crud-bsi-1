@@ -4,84 +4,39 @@ cpfs = []
 #PARA SALVAR A TURMA
 def salvar_turma():
     global turma
-    arq = open("turmas.txt", 'w', encoding='utf-8')
+    arquivo = open("turmas.txt", "w", encoding="utf-8")
     for i in turma:
         cod_turma = str(i[0])
         periodo = str(i[1])
         cod_disciplina = str(i[2])
         cpf_professor = str(i[3])
         cpf_aluno = str(i[4])
-        arq.write("{} {} {} {} {}".format(cod_turma, periodo, cod_dcp, cpf_prof, cpf_aluno))
-    arq.close()
+        arquivo.write("{} {} {} {} {}".format(cod_turma, periodo, cod_disciplina, cpf_professor, cpf_aluno))
+    arquivo.close()
 salvar_turma()
 
 
-#PARA CONSULTAR TURMA
-def consultar_arquivo():
-    global turma
-    arq = open("turmas.txt", "r", encoding="utf-8")
-    for i in lturma:
-        cod_turma = str(i[0])
-        periodo = str(i[1])
-        cod_disciplina = str(i[2])
-        cpf_professor = str(i[3])
-        cpf_aluno = str(i[4])
-        arq.readline()
-        print("CÓDIGO DA TURMA: {}, PERÍODO: {}, CÓDIGO DA DISCIPLINA: {}, CPF DO PROFESSOR: {}, CPF DO ALUNO: {}".format(cod_turma, periodo, cod_disciplina, cpf_professor, cpf_aluno))
-    arq.close()
-
-
-#PARA ADD O ALUNO NA TURMA:
-def add_aluno():
-    op = int(input("Para continuar com o cadastro digite 1, para retornar ao menu principal 2: "))
-    if op == 1:
-        cpfs = []
-        cod_turma = input("Digite o código da disciplina em que deseja se matricular: ")
-        for i in range(len(turma)):
-            if cod_turma in turma[i][0]:
-                while True:
-                    cpf = input("Digite o cpf para adicionar o aluno à turma ou digite 0 para encerrar a operação): ")
-                    if cpf != "0":
-                        cpfs.append(cpf)
-                    elif cpf == "0":
-                        cpfs.append(cpf)
-                        print('Alunos matriculados com sucesso."')
-                        break
-        else:
-            print("Esta turma não existe.")
-add_aluno()
-
 
 #PARA CADASTRO DE TURMA
-def cadastro_turma():
-    while True:
-        try:
-            op = int(input("Para realizar o cadastro de turma digite 1\nPara adicionar aluno à turma digite 2\nPara retornar ao menu principal digite 3: "))
-            if op == 1:
-                cod_turma = input("Digite o código da turma: ")
-                periodo = input("Digite o período da turma: ")
-                cod_disciplina = input("Digite o código da disciplina: ")
-                cpf_professor = input("Digite o CPF do professor: ")
-                for i in range(len(turma)):
-                    if cod_turma in turma[i][0]:
-                        print("Esta turma já está cadastrada.")
-                        break
-                    else:
-                        turma.append([cod_turma, periodo, cod_disciplina, cpf_professor])
-                        add_aluno()
-                        salvar_turma()
-                        print("Turma cadastrada com sucesso.")
-            elif op == 2:
-                add_aluno()
-                salvar_turma()
-            elif op == 3:
-                break
-            else:
-                print("Operação inválida.")
-        except EOFError:
-            break
-cadastro_turma()
 
+def cadastro_turma(): #Função para pedir as informações da turma
+    cod_turma = input("Digite o código da turma: ")
+    periodo = input("Digite o período da turma: ")
+    cod_disciplina = input("Digite o código da disciplina: ")
+    cpf_professor = input("Digite o CPF do professor: ")
+    while True:
+        cpf_aluno = input("Digite o CPF do aluno(para finalizar, digite 0): ")
+        if cpf_aluno == '0':
+            turma.append([cod_turma, periodo, cod_disciplina, cpf_professor, cpfs])
+            salvar_turma()
+            print('Turma cadastrada')
+            break
+        elif cpf_aluno in cpfs:
+            print('Aluno já está nessa turma')
+        else:
+            cpfs.append(cpf_aluno)
+            print('Aluno adicionado')
+cadastro_turma()
 
 #PARA REMOVER TURMA
 def remover_turma():
@@ -90,7 +45,7 @@ def remover_turma():
             op = int(input("Para remover turma digite 1\nPara retornar ao menu principal digite 2: "))
             if op == 1:
                 del_turma = input("Digite o código da turma para prosseguir com a remoção: ")
-                for i in ragne(len(turma)):
+                for i in range(len(turma)):
                     if del_turma in turma[i][0]:
                         print("CÓDIGO DA TURMA: {}\n"
                               "PERÍDODO: {}\n"
@@ -111,6 +66,7 @@ def remover_turma():
             break
 remover_turma()
 
+
 #ALTERAR TURMA
 def alterar_turma():
     while True:
@@ -128,7 +84,7 @@ def alterar_turma():
                                 "Digite a operação que deseja realizar: "))
                         if opc == 1:
                             cod = input("Digite o novo código da turma: ")
-                            turma[i][0] == cod
+                            turma[i][0] = cod
                             salvar_turma()
                             print("CÓDIGO DA TURMA: {}\n"
                               "PERÍODO: {}\n"
@@ -139,7 +95,7 @@ def alterar_turma():
                             break
                         elif opc == 2:
                             periodo = input("Digite o novo período da turma:  ")
-                            turma[i][1] == periodo
+                            turma[i][1] = periodo
                             salvar_turma()
                             print("CÓDIGO DA TURMA: {}\n"
                               "PERÍODO: {}\n"
@@ -150,7 +106,7 @@ def alterar_turma():
                             break
                         elif op == 3:
                             cod_d = input("Digite o novo código da disciplina: ")
-                            turma[i][2] == cod_d
+                            turma[i][2] = cod_d
                             salvar_turma()
                             print("CÓDIGO DA TURMA: {}\n"
                               "PERÍODO: {}\n"
@@ -176,7 +132,7 @@ def alterar_turma():
                                 if cpd_a != "0":
                                     cpfs.append(cpf_a)
                                 elif cpf_a == "0":
-                                    turma[i][4] == cpfs
+                                    turma[i][4] = cpfs
                                     salvar_turma()
                                     print("CÓDIGO DA TURMA: {}\n"
                                       "PERÍODO: {}\n"
@@ -208,10 +164,10 @@ def consultar_turma():
                 for i in range(len(turma)):
                     if consult_turma in turma[i][0]:
                         print("CÓDIGO DA TURMA: {}\n"
-                              "PERÍODO: {]\n"
-                              "CÓDIGO DA DISCIPLINA: {}\n"
-                              "CPF DO PROFESSOR: {}\n"
-                              "CPF DE ALUNO: {}".format(turma[i][0], turma[i][1], turma[i][2], turma[i][3], turma[i][4]))
+                                "PERÍODO: {}\n"
+                                "CÓDIGO DA DISCIPLINA: {}\n"
+                                "CPF DO PROFESSOR: {}\n"
+                                "CPF DO ALUNO: {}".format(turma[i][0], turma[i][1], turma[i][2], turma[i][3], turma[i][4]))
                         break
                 else:
                     print("Turma não cadastrada.")
