@@ -11,17 +11,6 @@ def salvar_cadastro():
     arq.close()
 salvar_cadastro()
 
-#PARA CONSULTAR A MATRÍCULA DO ALUNO
-def consulta_arquivo():
-    global aluno
-    arq = open("alunos.txt", "r", encoding ="utf-8")
-    for i in aluno:
-        nome_aluno = str(i[0])
-        cpf_aluno = str(i[1])
-        arq.readline()
-        print(nome_aluno, cpf_aluno)
-consulta_arquivo()
-
 #CADASTRO
 def cadastro_aluno():
     while True:
