@@ -1,0 +1,127 @@
+aluno = []
+
+#PARA SALVAR O CADASTRO, A ATUALIZAÇÃO E A REMOÇÃO DO ALUNO
+def salvar_cadastro():
+    global aluno
+    arq = open("alunos.txt", "w", encoding = "utf-8")
+    for i in aluno:
+        nome_aluno = str(i[0])
+        cpf_aluno = str(i[1])
+        arq.write('%s %s\n' % (nome_aluno, cpf_aluno))
+    arq.close()
+salvar_cadastro()
+
+#PARA CONSULTAR A MATRÍCULA DO ALUNO
+def consulta_arquivo():
+    global aluno
+    arq = open("alunos.txt", "r", encoding ="utf-8")
+    for i in aluno:
+        nome_aluno = str(i[0])
+        cpf_aluno = str(i[1])
+        arq.readline()
+        print(nome_aluno, cpf_aluno)
+consulta_arquivo()
+
+#CADASTRO
+def cadastro_aluno():
+    while True:
+        try:
+            op = int(input("Para realizar o cadastro de aluno, digite 1, para retornar ao menu principal digite 2: "))
+            if op == 1:
+                nome_aluno = input("Digite o nome do aluno: ")
+                cpf_aluno = input("Digite o cpf do aluno: ")
+                for i in range(len(aluno)):
+                    if cpf_aluno in aluno[i][1]:
+                        print("Aluno já matriculado.\n")
+                        print("Nome do aluno: {} CPF do aluno: {}".format(aluno[i][0], aluno[i][1]))
+                        break
+                else:
+                    aluno.append([nome_aluno, cpf_aluno])
+                    print("NOME: {} CPF: {}, Aluno matriculado com sucesso!".format(nome_aluno,cpf_aluno))
+                    salvar_cadastro()
+            elif op == 2:
+                break
+            else:
+                print("Opção inváida")
+        except EOFError:
+            break
+cadastro_aluno()
+
+#REMOVER O CADASTRO
+def remover_aluno():
+    while True:
+        try:
+            op = int(input("Para realizar o cadastro de aluno, digite 1, para retornar ao menu principal digite 2: "))
+            if op == 1:
+                r_aluno = input("Para remoção do aluno, digite seu cpf: ")
+                for i in range(len(laluno)):
+                    if aluno[i][1] == r_aluno:
+                        print("Aluno removido com sucesso.")
+                        aluno.remove(aluno[i])
+                        salvar_cadastro()
+                        break
+                else:
+                    print("cadastro não encontrado.")
+            elif op == 2:
+                break
+            elif op != 1 or op != 2:
+                print("Operação inválida.")
+        except EOFError:
+            break
+remover_aluno()
+
+
+#CONSULTA DO CADASTRO
+def consultar_aluno():
+    while True:
+        try:
+            op = int(input("Para realizar a consulta de aluno, digite 1, para retornar ao menu principal digite 2: "))
+            if op == 1:
+                consulta_aluno = input("Digite seu cpf para a consulta de matrícula: ")
+                for i in range(len(aluno)):
+                    if aluno[i][1] == consulta_aluno:
+                        print("NOME: {}\n"
+                              "CPF: {}".format(aluno[i][0], aluno[i][1]))
+                    else:
+                        print("Aluno não matriculado.")
+            elif op == 2:
+                break
+            else:
+                print("Operação inválida.")
+        except EOFError:
+            break
+consultar_aluno()
+
+#ATUALIZAR O CADASTRO
+def atualizar_aluno():
+    while True:
+        try:
+            alt_aluno = int(input("Para ter acesso à atualização de cadastro, digite 1, para retornar ao menu principal digite 2"))
+            if alt_aluno == 1:
+                alterar = input("Digite seu CPF(sem pontos) para ter acesso à atualização de cadastro: ")
+                for i in range(len(aluno)):
+                    if aluno[i][1] == alterar:
+                        op = int(input("Para atualizar o nome digite 1, para atualizar o cpf digite 2: "))
+                        if op == 1:
+                            nome = input("Digite seu nome aqui: ")
+                            aluno[i][0] = nome
+                            print("NOME: {}\n"
+                                  "CPF: {}".format(aluno[i][0], aluno[i][1]))
+                            print("Cadastro alterado com sucesso.")
+                            salvar_cadastro()
+                        elif op == 2:
+                            cpf = input("Digite seu cpf(sem pontos): ")
+                            aluno[i][1] = cpf
+                            print("NOME: {}\n"
+                                    "CPF: {}".format(aluno[i][0], aluno[i][1]))
+                            print("Cadastro alterado com sucesso.")
+                            salvar_cadastro()
+                        else:
+                            print("Opção inválida.")
+                    else:
+                        print("Este aluno não está cadastrado.")
+            elif alt_aluno == 2:
+                break
+        except EOFError:
+            break
+atualizar_aluno()
