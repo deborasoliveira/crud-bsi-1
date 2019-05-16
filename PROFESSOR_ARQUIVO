@@ -11,17 +11,6 @@ def salvar_cadastrop():
         arq.write('%s %s %s\n' %(nome_professor, cpf_professor, dpt_professor))
     arq.close()
 
-#PARA CONSULTAR NO ARQUIVO
-def consulta_arquivo():
-    global professor
-    arq = open("professor.txt", "r", encoding="utf-8")
-    for i in professor:
-        nome_professor = str(i[0])
-        cpf_professor = str(i[1])
-        dpt_professor = str(i[2])
-        arq.readline()
-        print("NOME: {}, CPF: {}, DEPARTAMENTO: {}".format(nome_professor, cpf_professor, dpt_professor))
-    arq.close()
 
 #CADASTRO
 def cadastro_prof():
