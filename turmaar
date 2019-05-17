@@ -13,7 +13,6 @@ def salvar_turma():
         cpf_aluno = str(i[4])
         arquivo.write("{} {} {} {} {}".format(cod_turma, periodo, cod_disciplina, cpf_professor, cpf_aluno))
     arquivo.close()
-salvar_turma()
 
 
 
