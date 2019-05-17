@@ -24,15 +24,14 @@ from turmaar import consultar_turma
 while True:
     try:
         menu_principal()
-        cod = int(input('Digite o Número do Dados Que Queira Executar: '))
+        cod = int(input("Digite a operação que deseja executar: "))
         if cod == 0:
-            print('Execursão finalizada com sucesso!')
             exit(0)
 
 
         elif cod == 1:
             menu_aluno()
-            cod = int(input('Informe o número que deseja executar: '))
+            cod = int(input("Digite a operação que deseja executar: "))
             if cod == 0:
                 menu_principal()
             elif cod == 1:
@@ -49,7 +48,7 @@ while True:
 
         elif cod == 2:
             menu_professor()
-            cod = int(input('Informe o número que deseja executar: '))
+            cod = int(input("Digite a operação que deseja executar: "))
             if cod == 0:
                 menu_principal()
             elif cod == 1:
@@ -67,7 +66,7 @@ while True:
 
         elif cod == 3:
             menu_disciplina()
-            cod = int(input('Informe o número que deseja executar: '))
+            cod = int(input("Digite a operação que deseja executar: "))
             if cod == 0:
                 menu_principal()
             elif cod == 1:
@@ -84,7 +83,7 @@ while True:
 
         elif cod == 4:
             menu_turma()
-            cod = int(input('Informe o número que deseja executar: '))
+            cod = int(input("Digite a operação que deseja executar: "))
             if cod == 0:
                 menu_principal()
             elif cod == 1:
