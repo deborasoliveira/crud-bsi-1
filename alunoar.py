@@ -42,7 +42,7 @@ def remover_aluno():
             op = int(input("Para remover aluno, digite 1, para retornar ao menu principal digite 2: "))
             if op == 1:
                 r_aluno = input("Para remoção do aluno, digite seu cpf: ") #PARA EXERCUTAR A REMOÇÃO É PRECISO INFORMAR O CPF
-                for i in range(len(laluno)):
+                for i in range(len(aluno)):
                     if aluno[i][1] == r_aluno:
                         print("Aluno removido com sucesso.") #CASO O ALUNO ESTEJA CADASTRADO, A REMOÇÃO É EFETUADA
                         aluno.remove(aluno[i])
