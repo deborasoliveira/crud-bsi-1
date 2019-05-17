@@ -121,3 +121,4 @@ def atualizar_prof():
         except EOFError:
             break
 atualizar_prof()
+
