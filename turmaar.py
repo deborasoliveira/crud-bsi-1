@@ -34,8 +34,8 @@ def cadastro_turma(): #Função para pedir as informações da turma
             print('Aluno já está nessa turma')
         else:
             cpfs.append(cpf_aluno)
+            salvar_turma()
             print('Aluno adicionado')
-            break
 
 
 #PARA REMOVER TURMA
