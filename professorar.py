@@ -117,3 +117,4 @@ def atualizar_prof():
                 print("Operação inválida.")
         except EOFError:
             break
+            
