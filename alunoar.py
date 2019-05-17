@@ -31,7 +31,7 @@ def cadastro_aluno():
             elif op == 2:
                 break #CASO ELE ESCOLHA A OPÇÃO 2, O PROGRAMA SERÁ FINALIZADO
             else:
-                print("Opção inváida") #CASO ELE ESCOLHA QUALQUER OUTRA OPÇÃO, SERÁ CONSIDERADA INVÁLIDA
+                print("Opção inválida") #CASO ELE ESCOLHA QUALQUER OUTRA OPÇÃO, SERÁ CONSIDERADA INVÁLIDA
         except EOFError:
             break
 
