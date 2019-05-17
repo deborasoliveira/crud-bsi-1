@@ -90,7 +90,7 @@ while True:
             elif cod == 1:
                 cadastro_turma()
             elif cod == 2:
-                remover_turma_turma()
+                remover_turma()
             elif cod == 3:
                 consultar_turma()
             elif cod == 4:
