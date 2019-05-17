@@ -5,6 +5,7 @@ def menu_principal():
           "DIGITE 3 PARA TER ACESSO AO MENU DE DISCIPLINA\n"
           "DIGITE 4 PARA TER ACESSO AO MENU DE TURMAS\n"
           "DIGITE 0 PARA FINALIZAR A OPERAÇÃO")
+menu_principal()
 
 def menu_professor():
     print("DIGITE 1 PARA CADASTRAR PROFESSOR\n"
