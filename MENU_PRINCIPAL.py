@@ -1,20 +1,26 @@
+#ADD alunos.txt, ADD disciplinas.txt, ADD professor.txt, ADD turmas.txt
+
 from menus import menu_professor
 from menus import menu_aluno
 from menus import menu_disciplina
 from menus import menu_turma
 from menus import menu_principal
+
 from alunoar import cadastro_aluno
 from alunoar import remover_aluno
 from alunoar import consultar_aluno
 from alunoar import atualizar_aluno
+
 from disciplinaar import cadastro_disciplina
 from disciplinaar import remover_disciplina
 from disciplinaar import alterar_disciplina
 from disciplinaar import consultar_disciplina
+
 from professorar import cadastro_prof
 from professorar import remover_cadastro
 from professorar import consultar_cadastro
 from professorar import atualizar_prof
+
 from turmaar import cadastro_turma
 from turmaar import remover_turma
 from turmaar import alterar_turma
