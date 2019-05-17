@@ -28,6 +28,7 @@ def cadastro_aluno():
                     aluno.append([nome_aluno, cpf_aluno])
                     print("NOME: {} CPF: {}, Aluno matriculado com sucesso!".format(nome_aluno,cpf_aluno))
                     salvar_cadastro()
+                    break
             elif op == 2:
                 break
             else:
@@ -85,7 +86,7 @@ consultar_aluno()
 def atualizar_aluno():
     while True:
         try:
-            alt_aluno = int(input("Para ter acesso à atualização de cadastro, digite 1, para retornar ao menu principal digite 2"))
+            alt_aluno = int(input("Para ter acesso à atualização de cadastro, digite 1, para retornar ao menu principal digite 2: "))
             if alt_aluno == 1:
                 alterar = input("Digite seu CPF(sem pontos) para ter acesso à atualização de cadastro: ")
                 for i in range(len(aluno)):
