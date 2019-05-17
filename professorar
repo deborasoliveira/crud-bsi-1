@@ -16,23 +16,23 @@ def salvar_cadastrop():
 def cadastro_prof():
     while True:
         try:
-            op = int(input("Para cadastro digite 1, para retornar ao menu principal digite 2: "))
+            op = int(input("Para cadastrar professor digite 1, para retornar ao menu principal digite 2: "))
             if op == 1:
-                nome_professor = input("Digite seu nome para cadastro aqui: ")
+                nome_professor = input("Digite seu nome para cadastro aqui: ") #ADICIONAR DADOS DO PROFESSOR
                 cpf_professor = input("Digite seu cpf para cadastro aqui: ")
                 dpt_professor = input("Digite seu departamento para cadastro aqui: ")
                 for i in range(len(professor)):
-                    if cpf_professor in professor[i][1]:
+                    if cpf_professor in professor[i][1]: #CASO ELE SEU CPF JÁ ESTEJA NA LISTA, SIGNIFICA QUE JÁ ESTÁ CADASTRADO
                         print("Professor já cadastrado. ")
                 else:
-                    professor.append([nome_professor, cpf_professor, dpt_professor])
+                    professor.append([nome_professor, cpf_professor, dpt_professor]) #CASO CONTRÁRIO, ELE SERÁ ADICIONADO À LISTA DE PROFESSORES
                     print("Cadastro realizado com sucesso: {}, {}, {}".format(nome_professor, cpf_professor, dpt_professor))
-                    salvar_cadastrop()
+                    salvar_cadastrop()  #FUNÇÃO PARA SALVAR CADASTRO
                     break
-            elif op == 2:
+            elif op == 2: #CASO ELE ESCOLHA A OPÇÃO 2, O PROGRAMA SERÁ FINALIZADO
                 break
             else:
-                print("Opção inválida.")
+                print("Opção inválida.") #CASO ELE ESCOLHA QUALQUER OUTRA OPÇÃO, SERÁ CONSIDERADA INVÁLIDA
         except EOFError:
             break
 cadastro_prof()
@@ -44,19 +44,19 @@ def remover_cadastro():
         try:
             op = int(input("Para remover o cadastro digite 1, para retornar ao menu principal digite 2: "))
             if op == 1:
-                del_professor = input("Para a remoção de cadastro, digite seu cpf aqui: ")
+                del_professor = input("Para a remoção de cadastro, digite seu cpf aqui: ") #PARA EXERCUTAR A REMOÇÃO É PRECISO INFORMAR O CPF
                 for i in range(len(professor)):
-                    if del_professor in professor[i][1]:
-                        professor.remove(professor[i])  # ENFEITAR MAIS ESSA PARTE, ADD + OUTRA OP!!!!!!!!!!!!!!!!
+                    if del_professor in professor[i][1]: #CASO O ALUNO ESTEJA CADASTRADO, A REMOÇÃO É EFETUADA
+                        professor.remove(professor[i])
                         print("Professor removido com sucesso.")
                         salvar_cadastrop()
                 else:
-                    print("Cadastro não encontrado.")
+                    print("Cadastro não encontrado.") #CASO CONTRÁRIO, SERÁ INFORMADO DE QUE ESTE CPF NÃO ESTÁ CADASTRADO
                     break
-            elif op == 2:
+            elif op == 2: #CASO ELE ESCOLHA A OPÇÃO 2, O PROGRAMA DEIXARÁ DE RODAR
                 break
             else:
-                print("Operação inválida.")
+                print("Operação inválida.") #CASO ELE ESCOLHA OUTRA OPÇÃO, ELA SERÁ CONSIDERADA INVÁLIDA
         except EOFError:
             break
 remover_cadastro()
@@ -68,16 +68,16 @@ def consultar_cadastro():
         try:
             op = int(input("Para consultar cadastro digite 1, para retornar ao menu principal digite 2: "))
             if op == 1:
-                consulta_prof = input("Para consulta, digite seu cpf aqui: ")
+                consulta_prof = input("Para consulta, digite seu cpf aqui: ") #PARA A CONSULTA É NECESSÁRIO A VERIFICAÇÃO DO CPF
                 for i in range(len(professor)):
-                    if professor[i][1] == consulta_prof:
+                    if professor[i][1] == consulta_prof: #SE O CPF ESTIVER NA LISTA, O CADASTRO SERÁ CONSULTADO NORMALMENTE
                         print("NOME: {}\nCPF: {}\nDEPARTAMENTO: {}".format(professor[i][0], professor[i][1], professor[i][2]))
                     else:
-                        print("Cadastro não encontrado.")
+                        print("Cadastro não encontrado.") #CASO CONTRÁRIO, SRÁ INFORMADO DE QUE NÃO HÁ CADASTRO COM ESTE CPF
             elif op == 2:
-                break
+                break #FINALIZAR PROGRAMA
             else:
-                print("Operação inválida.")
+                print("Operação inválida.") #CASO A OPÇÃO DELE SEJA DIFERENTE DAS APRESENTADAS, ELA SERÁ CONSIDERADA INVÁLIDA
         except EOFError:
             break
 consultar_cadastro()
@@ -121,4 +121,3 @@ def atualizar_prof():
         except EOFError:
             break
 atualizar_prof()
-
