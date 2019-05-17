@@ -7,8 +7,7 @@ def salvar_cadastrod():
         nome_disciplina = str(i[0])
         cod_disciplina = str(i[1])
         arq.write('%s %s\n' % (nome_disciplina, cod_disciplina))
-        arq.close()
-salvar_cadastrod()
+    arq.close()
 
 
 #PARA O CADASTRO DE DISCIPLINA
