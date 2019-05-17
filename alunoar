@@ -1,5 +1,4 @@
 aluno = []
-
 #PARA SALVAR O CADASTRO, A ATUALIZAÇÃO E A REMOÇÃO DO ALUNO
 def salvar_cadastro():
     global aluno
@@ -9,7 +8,7 @@ def salvar_cadastro():
         cpf_aluno = str(i[1])
         arq.write('%s %s\n' % (nome_aluno, cpf_aluno))
     arq.close()
-salvar_cadastro()
+
 
 #CADASTRO
 def cadastro_aluno():
@@ -35,7 +34,6 @@ def cadastro_aluno():
                 print("Opção inváida") #CASO ELE ESCOLHA QUALQUER OUTRA OPÇÃO, SERÁ CONSIDERADA INVÁLIDA
         except EOFError:
             break
-cadastro_aluno()
 
 #REMOVER O CADASTRO
 def remover_aluno():
@@ -58,7 +56,6 @@ def remover_aluno():
                 print("Operação inválida.")
         except EOFError:
             break
-remover_aluno()
 
 
 #CONSULTA DO CADASTRO
@@ -80,7 +77,8 @@ def consultar_aluno():
                 print("Operação inválida.") #CASO A OPÇÃO DELE SEJA DIFERENTE DAS APRESENTADAS, ELA SERÁ CONSIDERADA INVÁLIDA
         except EOFError:
             break
-consultar_aluno()
+
+
 
 #ATUALIZAR O CADASTRO
 def atualizar_aluno():
@@ -114,4 +112,4 @@ def atualizar_aluno():
                 break
         except EOFError:
             break
-atualizar_aluno()
+
