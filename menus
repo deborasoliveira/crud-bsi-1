@@ -5,7 +5,6 @@ def menu_principal():
           "DIGITE 3 PARA TER ACESSO AO MENU DE DISCIPLINA\n"
           "DIGITE 4 PARA TER ACESSO AO MENU DE TURMAS\n"
           "DIGITE 0 PARA FINALIZAR A OPERAÇÃO")
-menu_principal()
 
 def menu_professor():
     print("DIGITE 1 PARA CADASTRAR PROFESSOR\n"
@@ -13,7 +12,6 @@ def menu_professor():
           "DIGITE 3 PARA CONSULTA\n"
           "DIGITE 4 PARA ATUALIZAR CADASTRO\n"
           "DIGITE 0 PARA RETORNAR AO MENU PRINCIPAL\n")
-menu_professor()
 
 def menu_aluno():
     print("DIGITE 1 PARA CADASTRAR ALUNO\n"
@@ -21,7 +19,6 @@ def menu_aluno():
           "DIGITE 3 PARA CONSULTAR CADASTRO\n"
           "DIGITE 4 PARA ATUALIZAR CADASTRO\n"
           "DIGITE 0 PARA RETORNAR AO MENU PRINCIPAL")
-menu_aluno()
 
 
 def menu_disciplina():
@@ -30,7 +27,6 @@ def menu_disciplina():
           "DIGITE 3 PARA CONSULTAR DISCIPLINA\n"
           "DIGITE 4 PARA ATUALIZAR DISCIPLINA\n"
           "DIGITE 0 PARA RETORNAR AO MENU PRINCIPAL")
-menu_disciplina()
 
 def menu_turma():
     print("DIGITE 1 PARA CADASTRAR TURMA\n"
@@ -38,4 +34,3 @@ def menu_turma():
           "DIGITE 3 PARA CONSULTAR TURMA\n"
           "DIGITE 4 PARA ATUALIZAR TURMA\n"
           "DIGITE 0 PARA RETORNAR AO MENU PRINCIPAL")
-menu_turma()
