@@ -35,7 +35,8 @@ def cadastro_turma(): #Função para pedir as informações da turma
         else:
             cpfs.append(cpf_aluno)
             print('Aluno adicionado')
-cadastro_turma()
+            break
+
 
 #PARA REMOVER TURMA
 def remover_turma():
@@ -63,7 +64,6 @@ def remover_turma():
                 print("Operação inválida.")
         except EOFError:
             break
-remover_turma()
 
 
 #ALTERAR TURMA
@@ -150,7 +150,6 @@ def alterar_turma():
                 print("Operação inválida.")
         except EOFError:
             break
-alterar_turma()
 
 
 #PARA CONSULTAR TURMA
@@ -176,4 +175,3 @@ def consultar_turma():
                 print("Operação inválida.")
         except EOFError:
             break
-consultar_turma()
