@@ -1,24 +1,23 @@
-from MENUS_ARQUIVO import menu_professor()
-from MENUS_ARQUIVO import menu_aluno()
-from MENUS_ARQUIVO import menu_disciplina()
+from MENUS_ARQUIVO import menu_professor
+from MENUS_ARQUIVO import menu_aluno
+from MENUS_ARQUIVO import menu_disciplina
 from MENUS_ARQUIVO import menu_turma
-from ALUNO_ARQUIVO import cadastro_aluno()
-from ALUNO_ARQUIVO import remover_aluno()
-from ALUNO_ARQUIVO import consultar_aluno()
-from ALUNO_ARQUIVO import atualizar_aluno()
-from DISCIPLINA_ARQUIVO import cadastro_disciplina()
-from DISCIPLINA_ARQUIVO import remover_disciplina()
-from DISCIPLINA_ARQUIVO import alterar_disciplina()
-from DISCIPLINA_ARQUIVO import consultar_disciplina()
-from PROFESSOR_ARQUIVO import cadastro_prof()
-from PROFESSOR_ARQUIVO import remover_cadastro()
-from PROFESSOR_ARQUIVO import consultar_cadastro()
-from PROFESSOR_ARQUIVO import atualizar_prof()
-from TURMA_ARQUIVO import cadastro_turma()
-from TURMA_ARQUIVO import remover_turma()
-from TURMA_ARQUIVO import alterar_turma()
-from TURMA_ARQUIVO import consultar_turma()
-
+from ALUNO_ARQUIVO import cadastro_aluno
+from ALUNO_ARQUIVO import remover_aluno
+from ALUNO_ARQUIVO import consultar_aluno
+from ALUNO_ARQUIVO import atualizar_aluno
+from DISCIPLINA_ARQUIVO import cadastro_disciplina
+from DISCIPLINA_ARQUIVO import remover_disciplina
+from DISCIPLINA_ARQUIVO import alterar_disciplina
+from DISCIPLINA_ARQUIVO import consultar_disciplina
+from PROFESSOR_ARQUIVO import cadastro_prof
+from PROFESSOR_ARQUIVO import remover_cadastro
+from PROFESSOR_ARQUIVO import consultar_cadastro
+from PROFESSOR_ARQUIVO import atualizar_prof
+from TURMA_ARQUIVO import cadastro_turma
+from TURMA_ARQUIVO import remover_turma
+from TURMA_ARQUIVO import alterar_turma
+from TURMA_ARQUIVO import consultar_turma
 while True:
     try:
         print("            ________________________________________")
@@ -29,98 +28,100 @@ while True:
         print("                         MENU PRINCIPAL             ")
         print("            ________________________________________")
 
-def menu_principal():
-    print("DIGITE 1 PARA TER ACESSO AO MENU DO ALUNO\n"
+        def menu_principal():
+            print("DIGITE 1 PARA TER ACESSO AO MENU DO ALUNO\n"
           "DIGITE 2 PARA TER ACESSO AO MENU DO PROFESSOR\n"
           "DIGITE 3 PARA TER ACESSO AO MENU DE DISCIPLINA\n"
           "DIGITE 4 PARA TER ACESSO AO MENU DE TURMAS\n"
           "DIGITE 0 PARA FINALIZAR A OPERAÇÃO")
-    op = int(input("Digite o comando desejado: "))
-    if op == 1:
-        print("MENU DO ALUNO:")
-        menu_aluno()
-        opc = int(input("Digite a operação desejada: "))
-        if opc == 1:
-            print("CADASTRAR ALUNO")
-            cadastro_aluno()
-        elif opc == 2:
-            print("REMOVER CADASTRO")
-            remover_aluno()
-        elif opc == 3:
-            print("CONSULTAR ALUNO")
-            consultar_aluno()
-        elif opc == 4:
-            print("ATUALIZAR ALUNO")
-            atualizar_aluno()
-        elif opc == 0:
-            menu_principal()
+        op = int(input("Digite o comando desejado: "))
+        if op == 1:
+            print("MENU DO ALUNO:")
+            menu_aluno()
+            opc = int(input("Digite a operação desejada: "))
+            if opc == 1:
+                print("CADASTRAR ALUNO")
+                cadastro_aluno()
+            elif opc == 2:
+                print("REMOVER CADASTRO")
+                remover_aluno()
+            elif opc == 3:
+                print("CONSULTAR ALUNO")
+                consultar_aluno()
+            elif opc == 4:
+                print("ATUALIZAR ALUNO")
+                atualizar_aluno()
+            elif opc == 0:
+                menu_principal()
+            else:
+                print("Operação inválida.")
+        elif op == 2:
+            print("MENU DO PROFESSOR")
+            menu_professor()
+            opc = int(input("Digite a operação desejada: "))
+            if opc == 1:
+                print("CADASTRAR PROFESSOR")
+                cadastro_prof()
+            elif opc == 2:
+                print("REMOVER CADASTRO")
+                remover_cadastro()
+            elif opc == 3:
+                print("CONSULTAR PROFESSOR")
+                consultar_cadastro()
+            elif opc == 4:
+                print("ATUALIZAR PROFESSOR")
+                atualizar_prof()
+            elif opc == 0:
+                menu_principal()
+            else:
+                print("Operação inválida.")
+        elif op == 3:
+            print("MENU DISCIPLINA")
+            menu_disciplina()
+            opc = int(input("Digite a operação desejada: "))
+            if opc == 1:
+                print("CADASTRAR DISCIPLINA")
+                cadastro_disciplina()
+            elif opc == 2:
+                print("REMOVER DISCIPLINA")
+                remover_disciplina()
+            elif opc == 3:
+                print("CONSULTAR DISCIPLINA")
+                consultar_disciplina()
+            elif opc == 4:
+                print("ATUALIZAR DISCIPLINA")
+                alterar_disciplina()
+            elif opc == 0:
+                menu_principal()
+            else:
+                print("Operação inválida.")
+        elif op == 4:
+            print("MENU TURMA")
+            menu_turma()
+            opc = int(input("Digite a operação desejada: "))
+            if opc == 1:
+                print("CADASTRAR TURMA")
+                cadastro_turma()
+            elif opc == 2:
+                print("REMOVER TURMA")
+                remover_turma()
+            elif opc == 3:
+                print("CONSULTAR TURMA")
+                consultar_turma()
+            elif opc == 4:
+                print("ATUALIZAR TURMA")
+                alterar_turma()
+            elif opc == 0:
+                menu_principal()
+            else:
+                print("Operação inválida.")
+        elif op == 0:
+            break
         else:
             print("Operação inválida.")
-    elif op == 2:
-        print("MENU DO PROFESSOR")
-        menu_professor()
-        opc = int(input("Digite a operação desejada: "))
-        if opc == 1:
-            print("CADASTRAR PROFESSOR")
-            cadastro_prof()
-        elif opc == 2:
-            print("REMOVER CADASTRO")
-            remover_cadastro()
-        elif opc == 3:
-            print("CONSULTAR PROFESSOR")
-            consultar_cadastro()
-        elif opc == 4:
-            print("ATUALIZAR PROFESSOR")
-            atualizar_prof()
-        elif opc == 0:
-            menu_principal()
-        else:
-            print("Operação inválida.")
-    elif op == 3:
-        print("MENU DISCIPLINA")
-        menu_disciplina()
-        opc = int(input("Digite a operação desejada: "))
-        if opc == 1:
-            print("CADASTRAR DISCIPLINA")
-            cadastro_disciplina()
-        elif opc == 2:
-            print("REMOVER DISCIPLINA")
-            remover_disciplina()
-        elif opc == 3:
-            print("CONSULTAR DISCIPLINA")
-            consultar_disciplina()
-        elif opc == 4:
-            print("ATUALIZAR DISCIPLINA")
-            alterar_disciplina()
-        elif opc == 0:
-            menu_principal()
-        else:
-            print("Operação inválida.")
-    elif op == 4:
-        print("MENU TURMA")
-        menu_turma()
-        opc = int(input("Digite a operação desejada: "))
-        if opc == 1:
-            print("CADASTRAR TURMA")
-            cadastro_turma()
-        elif opc == 2:
-            print("REMOVER TURMA")
-            remover_turma()
-        elif opc == 3:
-            print("CONSULTAR TURMA")
-            consultar_turma()
-        elif opc == 4:
-            print("ATUALIZAR TURMA")
-            alterar_turma()
-        elif opc == 0:
-            menu_principal()
-        else:
-            print("Operação inválida.")
-    elif op == 0:
-        break
-    else:
-        print("Operação inválida.")
-menu_principal()
+            break
+        menu_principal()
+
     except EOFError:
         break
-        
+
