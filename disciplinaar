@@ -32,7 +32,7 @@ def cadastro_disciplina():
                 print("Operação inválida.")
         except EOFError:
             break
-cadastro_disciplina()
+
 
 #PARA REMOÇÃO DE DISCIPLINA
 def remover_disciplina():
@@ -54,7 +54,8 @@ def remover_disciplina():
                 print("Operação inválida.")
         except EOFError:
             break
-remover_disciplina()
+
+
 
 #PARA ALTERAR DISCIPLINA
 def alterar_disciplina():
@@ -86,7 +87,8 @@ def alterar_disciplina():
                 print("Operação inválida.")
         except EOFError:
             break
-alterar_disciplina()
+
+
 
 #PARA CONSULTAR DISCIPLINA
 def consultar_disciplina():
@@ -107,4 +109,3 @@ def consultar_disciplina():
                 print("operação inválida.")
         except EOFError:
             break
-consultar_disciplina()
