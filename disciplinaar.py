@@ -109,3 +109,4 @@ def consultar_disciplina():
                 print("operação inválida.")
         except EOFError:
             break
+
