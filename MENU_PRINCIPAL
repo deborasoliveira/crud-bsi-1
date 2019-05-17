@@ -66,7 +66,6 @@ while True:
 
 
         elif cod == 3:
-
             menu_disciplina()
             cod = int(input('Informe o número que deseja executar: '))
             if cod == 0:
