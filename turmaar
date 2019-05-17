@@ -20,7 +20,7 @@ salvar_turma()
 #PARA CADASTRO DE TURMA
 
 def cadastro_turma(): #Função para pedir as informações da turma
-    cod_turma = input("Digite o código da turma: ")
+    cod_turma = input("Para cadastrar a turma, digite o código dela: ")
     periodo = input("Digite o período da turma: ")
     cod_disciplina = input("Digite o código da disciplina: ")
     cpf_professor = input("Digite o CPF do professor: ")
@@ -178,4 +178,3 @@ def consultar_turma():
         except EOFError:
             break
 consultar_turma()
-
