@@ -35,7 +35,6 @@ def cadastro_prof():
                 print("Opção inválida.") #CASO ELE ESCOLHA QUALQUER OUTRA OPÇÃO, SERÁ CONSIDERADA INVÁLIDA
         except EOFError:
             break
-cadastro_prof()
 
 
 #REMOVER CADASTRO
@@ -59,7 +58,6 @@ def remover_cadastro():
                 print("Operação inválida.") #CASO ELE ESCOLHA OUTRA OPÇÃO, ELA SERÁ CONSIDERADA INVÁLIDA
         except EOFError:
             break
-remover_cadastro()
 
 
 #CONSULTAR CADASTRO
@@ -80,7 +78,6 @@ def consultar_cadastro():
                 print("Operação inválida.") #CASO A OPÇÃO DELE SEJA DIFERENTE DAS APRESENTADAS, ELA SERÁ CONSIDERADA INVÁLIDA
         except EOFError:
             break
-consultar_cadastro()
 
 
 #ATUALIZAR CADASTRO
@@ -120,5 +117,3 @@ def atualizar_prof():
                 print("Operação inválida.")
         except EOFError:
             break
-atualizar_prof()
-
